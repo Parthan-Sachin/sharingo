@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
-import { SidebarService } from './sidebar/sidebar.services';
+import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../sidebar/sidebar.services';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class AppComponent {
-  title = 'sharingo-app';
+export class NavbarComponent implements OnInit {
+
   constructor(public sidebarservice:SidebarService) { }
   toggleSidebar() {
     this.sidebarservice.setSidebarState(!this.sidebarservice.getSidebarState());
   }
-  toggleBackgroundImage() {
+   toggleBackgroundImage() {
     this.sidebarservice.hasBackgroundImage = !this.sidebarservice.hasBackgroundImage;
   }
   getSideBarState() {
@@ -22,4 +22,7 @@ export class AppComponent {
   hideSidebar() {
     this.sidebarservice.setSidebarState(true);
   }
+  ngOnInit() {
+  }
+
 }
