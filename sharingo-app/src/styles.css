@@ -19,3 +19,18 @@ body {
     border-radius: 0px !important;
     opacity: 0.5;
   }
+
+  .common-label{
+    font-size: small;
+    padding-top: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .common-header{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .common-gap{
+    padding-bottom: 6px;
+  }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-donor-new',
@@ -8,16 +8,36 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class DonorComponent implements OnInit {
 
-    public myForm: FormGroup;
-    public name = new FormControl('');
-    public address = new FormControl('');
-
-
-  constructor() { }
+   donorForm =new FormGroup({});
+   saveObject:any;
+   donor:any;
+   
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
 
+    this.donorForm = this.fb.group({
+      name:[''],
+      address:[''],
+      contactNumber:[''],
+      foodCount:[''],
+      foodItems:[''],
+      description:[''],
+      serviceCharge:[''],
+      operator:['']
+
+    })
+  
+  }
+
+  saveDonor()
+  {
+    this.saveObject=Object.assign({},this.donor,this.donorForm.value)
+
+    console.log(this.saveObject);
+  
     
+
   }
 
 }
