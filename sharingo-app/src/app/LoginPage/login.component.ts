@@ -11,11 +11,19 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
     loginForm: FormGroup;
+    public loginValue: string = '';
 
     constructor(private router: Router){}
 
     ngOnInit() {
 
+    }
+
+    login(){
+        localStorage.removeItem('loginValue');
+        localStorage.setItem('loginValue','true');
+        console.log("here at login")
+        this.router.navigate(['foodrecords']);
     }
 
     

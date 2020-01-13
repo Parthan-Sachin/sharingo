@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public loginValue: string = 'false';
   constructor() { }
 
   ngOnInit() {
+    this.loginValue = localStorage.getItem('loginValue');
+    console.log(this.loginValue);
   }
 
   openNav() {

@@ -160,7 +160,7 @@ html {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    padding-top:10px;
+    padding-top:40px;
   }
   
   @-webkit-keyframes fadeInDown {

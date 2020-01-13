@@ -39,7 +39,9 @@ import { LoginComponent } from './LoginPage/login.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path:'home',component:LoginComponent},
+      
+      {path:'dashboard',component:AppComponent},
+      {path:'',component:LoginComponent},
       {path:'donor/newdonorform',component: DonorComponent},
       {path:'foodrecords', component:FoodRecordsComponent}
     ]),

@@ -17,16 +17,16 @@ export class FoodRecordsComponent implements OnInit{
     }
 
     ngOnInit(){
-        // enable this while working
-        /* this.donorService.getFoodCallRecords().subscribe(
+        // enable this statement to get data from database
+        this.donorService.getFoodCallRecords().subscribe(
             result => {
             console.log(result);
             this.foodRecords = result;
         }
-        ) */
+        )
 
        console.log(this.products);
-       this.foodRecords = this.products;
+       /* this.foodRecords = this.products; */
     }
 
 
