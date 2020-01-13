@@ -16,6 +16,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DonorService } from './donor.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { FoodRecordsComponent } from './foodRecords/foodRecords.component';
+import { LoginComponent } from './LoginPage/login.component';
 
 
 
@@ -25,17 +29,22 @@ import { DonorService } from './donor.service';
     HeaderComponent,
     NavBarComponent,
     DashboardComponent,
-     
-     DonorComponent
+    FooterComponent,     
+    DonorComponent,
+    FoodRecordsComponent,
+    LoginComponent
 
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path:'donor',component: DonorComponent}
+      {path:'home',component:LoginComponent},
+      {path:'donor/newdonorform',component: DonorComponent},
+      {path:'foodrecords', component:FoodRecordsComponent}
     ]),
     BrowserAnimationsModule,
+    HttpClientModule
     
     
   ],

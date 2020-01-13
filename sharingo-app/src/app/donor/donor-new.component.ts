@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { DonorService } from '../donor.service';
 
 @Component({
   selector: 'app-donor-new',
@@ -11,8 +12,9 @@ export class DonorComponent implements OnInit {
    donorForm =new FormGroup({});
    saveObject:any;
    donor:any;
+   public infoFlag: boolean = false;
    
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private donorService: DonorService) { }
 
   ngOnInit() {
 
@@ -35,9 +37,19 @@ export class DonorComponent implements OnInit {
     this.saveObject=Object.assign({},this.donor,this.donorForm.value)
 
     console.log(this.saveObject);
-  
-    
+    this.donorService.saveDonorFoodDetails(this.saveObject).subscribe(
+      result => {
+        console.log(result);
+        this.infoFlag = true;
+       
+        
+      }
+    )   
 
+  }
+
+  clear(){
+    this.donorForm.reset();
   }
 
 }

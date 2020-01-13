@@ -1,34 +1,37 @@
-<div class="container" style="padding-top: 10px;">
+<div>
+    <div *ngIf="infoFlag" class="alert alert-success">
+        Food details have been saved <strong>Successfully!</strong>
+    </div>
     <div class="panel panel-default">
         <div class="panel-heading common-header">Donor Details</div>
         <div class="panel-body">
 
             <form (ngSubmit)="saveDonor()" [formGroup]="donorForm">
 
-
                 <div class="form-group">
                     <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="name">Donor Name</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
                             <input type="text" class="form-control" formControlName="name" placeholder="Enter name">
                         </div>
                     </div><br>
 
-                    <div class="col-md-12 common-gap" >
+                    <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="address">Location</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="address" placeholder="Enter Address">
+                            <input type="text" class="form-control" formControlName="address"
+                                placeholder="Enter Address">
                         </div>
                     </div><br>
 
-                    <div class="col-md-12 common-gap" >
+                    <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="contactNumber">Mobile</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
                             <input type="tel" class="form-control" formControlName="contactNumber" placeholder="">
                         </div>
@@ -37,54 +40,58 @@
                     <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="foodCount">Number of Food Items</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
-                            <input type="number" min="0" class="form-control" formControlName="foodCount" >
+                            <input type="number" min="0" class="form-control" formControlName="foodCount">
                         </div>
                     </div><br>
 
-                    <div class="col-md-12 common-gap" >
+                    <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="foodItems">Food Items</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="foodItems" placeholder="Enter Name of Food items you like to Donate">
+                            <input type="text" class="form-control" formControlName="foodItems"
+                                placeholder="Enter Name of Food items you like to Donate">
                         </div>
                     </div><br>
 
                     <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="description">Description</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
-                            <textarea class="form-control" rows="5" cols="14" formControlName="description" placeholder="Enter Description"></textarea>
+                            <textarea class="form-control" rows="5" cols="14" formControlName="description"
+                                placeholder="Enter Description"></textarea>
                         </div>
                     </div><br>
 
                     <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="serviceCharge">Service Charge</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="serviceCharge" placeholder="Enter service charge">
+                            <input type="text" class="form-control" formControlName="serviceCharge"
+                                placeholder="Enter service charge">
                         </div>
                     </div><br>
 
                     <div class="col-md-12 common-gap">
                         <div class="col-md-4">
                             <label class="common-label" for="operator">Name of the Operator</label>
-                        </div>                        
+                        </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="operator" placeholder="Enter operator Name">
+                            <input type="text" class="form-control" formControlName="operator"
+                                placeholder="Enter operator Name">
                         </div>
                     </div><br><br>
 
                     <div style="text-align: center; padding-bottom: 10px;">
-                       <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
-                       <button type="button" class="btn btn-default">cancel</button>
-                   </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
+                        <button type="button" (click)="clear()" class="btn btn-default">Clear</button>
+                    </div>
                 </div>
-               
+
             </form>
         </div>
     </div>
