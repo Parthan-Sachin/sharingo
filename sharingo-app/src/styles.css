@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
  
 body {
     font-size: 0.9rem;
@@ -33,4 +36,13 @@ body {
 
   .common-gap{
     padding-bottom: 6px;
+  }
+
+  ngx-datatable {
+    font-size: 14px;
+  }
+
+  ngx-datatable .datatable-header-cell-label{
+    font-size: 17px;
+    font-weight: bold;
   }

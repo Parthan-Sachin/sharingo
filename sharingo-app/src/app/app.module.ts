@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
@@ -38,6 +39,7 @@ import { LoginComponent } from './LoginPage/login.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    NgxDatatableModule,
     RouterModule.forRoot([
       
       {path:'dashboard',component:AppComponent},
