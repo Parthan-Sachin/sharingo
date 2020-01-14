@@ -13,6 +13,7 @@ export class DonorComponent implements OnInit {
    saveObject:any;
    donor:any;
    public infoFlag: boolean = false;
+   public saveText:string="save"
    
   constructor(private fb: FormBuilder,private donorService: DonorService) { }
 
@@ -34,6 +35,7 @@ export class DonorComponent implements OnInit {
 
   saveDonor()
   {
+    this.saveText= "Saving..."
     this.saveObject=Object.assign({},this.donor,this.donorForm.value)
 
     console.log(this.saveObject);
@@ -41,7 +43,16 @@ export class DonorComponent implements OnInit {
       result => {
         console.log(result);
         this.infoFlag = true;
+        this.saveText= "Saved"
+        this.clear();
+
+        setTimeout(function(){
+          this.infoFlag=false;
+          this.saveText= "Save"
+        }.bind(this),1500);
+
        
+
         
       }
     )   
