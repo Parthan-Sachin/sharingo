@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div>
+    <div *ngIf="infoFlag" class="alert alert-success">
+        Sensory evaluation details have been saved <strong>Successfully!</strong>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading common-header">Sensory Evaluation Form</div>
+        <div class="panel-body">
+
+            <form (ngSubmit)="save()" [formGroup]="sensoryForm">
+
+                <div class="form-group">
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="name">Recipe Name</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <input type="text" class="form-control" formControlName="recipeName">
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="address">Appearance</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <mat-slider thumbLabel tickInterval="1" min="1" max="9" formControlName="appearance">
+                            </mat-slider>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="contactNumber">Aroma</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <mat-slider thumbLabel tickInterval="1" min="1" max="9" formControlName="aroma">
+                            </mat-slider>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="foodCount">Taste</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <mat-slider thumbLabel tickInterval="1" min="1" max="9" formControlName="taste">
+                            </mat-slider>
+                        </div>
+
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="foodItems">Temperature</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100"
+                                formControlName="temperature" [(ngModel)]="fit">
+                            </mat-slider>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="description">Fit for Consumption</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <input type="text" class="form-control" formControlName="consumption" disabled>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4 custom-right">
+                            <label class="common-label" for="serviceCharge">Overall Acceptability</label>
+                        </div>
+                        <div class="col-md-4 custom-input">
+                            <input type="text" class="form-control" formControlName="acceptability" disabled>
+                        </div>
+                    </div><br>
+
+                    <div style="text-align: center; padding-bottom: 10px;">
+                        <button type="button" (click)="add()" class="btn btn-primary">Save</button>&nbsp;&nbsp;
+                        <button type="reset" class="btn btn-default">Clear</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
