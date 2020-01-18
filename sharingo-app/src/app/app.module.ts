@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { FoodRecordsComponent } from './foodRecords/foodRecords.component';
 import { LoginComponent } from './LoginPage/login.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -33,7 +34,8 @@ import { LoginComponent } from './LoginPage/login.component';
     FooterComponent,     
     DonorComponent,
     FoodRecordsComponent,
-    LoginComponent
+    LoginComponent,
+    OrdersComponent
 
   ],
   imports: [
@@ -45,7 +47,8 @@ import { LoginComponent } from './LoginPage/login.component';
       {path:'dashboard',component:AppComponent},
       {path:'',component:LoginComponent},
       {path:'donor/newdonorform',component: DonorComponent},
-      {path:'foodrecords', component:FoodRecordsComponent}
+      {path:'foodrecords', component:FoodRecordsComponent},
+      {path:'orders', component:OrdersComponent}
     ]),
     BrowserAnimationsModule,
     HttpClientModule
