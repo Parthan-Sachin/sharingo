@@ -39,19 +39,6 @@ export class SensoryEvaluationComponent implements OnInit{
             this.sensoryForm.controls['temperature'].setValue(this.fitValue);
           }
 
-          /* this.sensoryForm.get('temperature').valueChanges.subscribe(
-              result => {
-                  if(result>25){
-                    this.fitValue = 'yes';
-                    this.sensoryForm.controls['temperature'].setValue(this.fitValue);
-                  } else {
-                    this.fitValue = 'no';
-                    this.sensoryForm.controls['temperature'].setValue(this.fitValue);
-                  }
-                   
-
-              }
-          ) */
     }
 
     formatLabel(value: number) {      
@@ -60,6 +47,10 @@ export class SensoryEvaluationComponent implements OnInit{
 
     add(){
         console.log(this.sensoryForm.get('temperature').value);
+    }
+
+    save(){
+        
     }
 
     
