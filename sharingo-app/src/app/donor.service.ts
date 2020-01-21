@@ -30,4 +30,9 @@ export class DonorService {
     console.log("http://localhost:8080/app/api/donor");
     return this.http.get("http://localhost:8080/app/api/donor");
   }
+
+  getVolunteers():Observable<any>{
+    console.log("http://localhost:8080/app/api/volunteer");
+    return this.http.get("http://localhost:8080/app/api/volunteer");
+  }
 }

@@ -1,47 +1,19 @@
 <app-header></app-header>
-<div style="padding-top: 30px">
+<div style="padding-top: 10px;"> 
 
-    <!-- <div class="table-responsive">
-        <table class="table table-striped w-auto">
-            <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Food Count</th>
-                    <th scope="col">Food Items</th>
-                    <th scope="col">Service Charge</th>
-                    <th scope="col">Operator Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of foodRecords; let i = index">
-                    <td>{{i+1}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.foodCount}}</td>
-                    <td>{{item.foodItems}}</td>
-                    <td>{{item.serviceCharge}}</td>
-                    <td>{{item.operatorName}}</td>
 
-                </tr>
+    <div style="padding-left: 30px;padding-right: 30px; ">
+        <ngx-datatable class="material fullscreen" [rows]="foodRecords" style="top: 10px" [columnMode]="'force'"
+            headerHeight="50" footerHeight="100" rowHeight="auto" [limit]="10">
 
-            </tbody>
-        </table>
-    </div> -->
-    
-        
-        <div style="padding-left: 30px;padding-right: 30px">
-                <ngx-datatable class="material fullscreen" [rows]="foodRecords" style="top: 20px" [columnMode]="'force'"
-                 headerHeight="50" footerHeight="30" rowHeight="auto"
-                 [limit]="10" [scrollbarH]="true">
-                
-                <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
-                <ngx-datatable-column name="Food Count" prop="foodCount"></ngx-datatable-column>
-                <ngx-datatable-column name="Food Items" prop="foodItems"></ngx-datatable-column>
-                <ngx-datatable-column name="Service Charge" prop="serviceCharge"></ngx-datatable-column>
-                <ngx-datatable-column name="Operator Name" prop="operatorName"></ngx-datatable-column>
-            </ngx-datatable>
-        </div>
-        
-    
+            <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
+            <ngx-datatable-column name="Food Count" prop="foodCount"></ngx-datatable-column>
+            <ngx-datatable-column name="Food Items" prop="foodItems"></ngx-datatable-column>
+            <ngx-datatable-column name="Service Charge" prop="serviceCharge"></ngx-datatable-column>
+            <ngx-datatable-column name="Operator Name" prop="operatorName"></ngx-datatable-column>
+        </ngx-datatable>
+    </div>
+
+
 
 </div>

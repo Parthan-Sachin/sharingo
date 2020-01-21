@@ -24,6 +24,8 @@ import { FoodRecordsComponent } from './foodRecords/foodRecords.component';
 import { LoginComponent } from './LoginPage/login.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SensoryEvaluationComponent } from './sensory-evaluation/sensory-evaluation-edit.component';
+import { VolunteerListComponent } from './volunteer/volunteer-list.component';
+
 
 
 
@@ -39,7 +41,8 @@ import { SensoryEvaluationComponent } from './sensory-evaluation/sensory-evaluat
     FoodRecordsComponent,
     LoginComponent,
     OrdersComponent,
-    SensoryEvaluationComponent
+    SensoryEvaluationComponent,
+    VolunteerListComponent
     
 
   ],
@@ -50,6 +53,7 @@ import { SensoryEvaluationComponent } from './sensory-evaluation/sensory-evaluat
     MatSliderModule,
     NgxDatatableModule,
     RouterModule.forRoot([
+      {path:'volunteer',component:VolunteerListComponent},
       {path:'sensory',component:SensoryEvaluationComponent},
       {path:'dashboard',component:AppComponent},
       {path:'',component:LoginComponent},

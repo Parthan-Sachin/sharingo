@@ -1,0 +1,12 @@
+<app-header></app-header>
+
+<div style="padding-left: 30px;padding-right: 30px">
+    <div class="btn btn-primary">Add Volunteer</div>
+    <ngx-datatable class="material fullscreen" [rows]="volunteerList" style="top: 20px" [columnMode]="'force'"
+        headerHeight="50" footerHeight="50" rowHeight="auto" [limit]="10" [scrollbarH]="true">
+
+        <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
+        <ngx-datatable-column name="Contact" prop="contact"></ngx-datatable-column>
+        
+    </ngx-datatable>
+</div>
