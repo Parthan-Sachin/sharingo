@@ -4,7 +4,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, ModalModule } from 'ngx-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
@@ -25,6 +25,7 @@ import { LoginComponent } from './LoginPage/login.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SensoryEvaluationComponent } from './sensory-evaluation/sensory-evaluation-edit.component';
 import { VolunteerListComponent } from './volunteer/volunteer-list.component';
+import { CollectionDistributionEditComponent } from './collection-distribution-edit/collection-distribution-edit.component';
 
 
 
@@ -42,12 +43,14 @@ import { VolunteerListComponent } from './volunteer/volunteer-list.component';
     LoginComponent,
     OrdersComponent,
     SensoryEvaluationComponent,
-    VolunteerListComponent
+    VolunteerListComponent,
+    CollectionDistributionEditComponent
     
 
   ],
   imports: [
     BrowserModule,
+    ModalModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,

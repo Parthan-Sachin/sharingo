@@ -1,0 +1,102 @@
+
+<div>
+    <div *ngIf="infoFlag" class="alert alert-success">
+        Food collection and distribution record have been saved <strong>Successfully!</strong>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading common-header">Food collection and distribution Details</div>
+        <div class="panel-body">
+
+            <form (ngSubmit)="savecollection()" [formGroup]="collectionForm">
+
+                <div class="form-group">
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="name">Donor Name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" formControlName="name" readonly >
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="address">Location</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" formControlName="address"
+                                readonly>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="date">Date</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" class="form-control" formControlName="date" readonly>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="storageTemp">Food Storage Temperature</label>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100"
+                                formControlName="storageTemp" >
+                            </mat-slider>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="pickupTime">Food Pick-up Time</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="time" class="form-control" formControlName="pickupTime"
+                                >
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="servingTemp">Food Serving Temperature</label>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-slider thumbLabel [displayWith]="formatLabe2" tickInterval="1" min="0" max="100"
+                                formControlName="servingTemp" >
+                            </mat-slider>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="deliveredTime">Food Delivered Time</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="time" class="form-control" formControlName="deliveredTime"
+                                >
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap">
+                        <div class="col-md-4">
+                            <label class="common-label" for="operator">Operator</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" readonly formControlName="operator" readonly
+                                >
+                        </div>
+                    </div><br><br>
+
+                    <div style="text-align: center; padding-bottom: 10px;">
+                        <button type="submit" class="btn btn-primary">{{saveText}}</button>&nbsp;
+                        <button type="button" (click)="cancel()" class="btn btn-default">Clear</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
