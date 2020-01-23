@@ -5,6 +5,7 @@ import { Subscription, observable } from 'rxjs';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { combineLatest } from 'rxjs'
 
+
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -27,12 +28,12 @@ export class OrdersComponent implements OnInit {
     this.donorService.getFoodCallRecords().subscribe(
       result => {
       console.log(result);
-      this.foodRecords = result;
+     // this.foodRecords = result;
   }
   )
 
 // console.log(this.products);
-// this.foodRecords = this.products;
+this.foodRecords = this.products;
 }
 
 openModal(template: TemplateRef<any>, modalComponent: string) {

@@ -3,6 +3,7 @@
 @import '~@swimlane/ngx-datatable/themes/material.css';
 @import '~@swimlane/ngx-datatable/themes/bootstrap.css';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
+
  
 body {
     font-size: 0.9rem;
@@ -66,9 +67,28 @@ body {
     font-size: 14px;
   }
 
+  .common-header {
+    font-size: 17px;
+  }
+
   ngx-datatable .datatable-header-cell-label{
     font-size: 17px;
     font-weight: bold;
   }
+
+  .ngx-datatable.material .datatable-footer { 
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 10px;
+    padding-bottom: 20px
+    
+    }
+
+    .ngx-datatable.material .datatable-footer .datatable-pager .datatable-icon-left, .ngx-datatable.material .datatable-footer .datatable-pager .datatable-icon-skip, .ngx-datatable.material .datatable-footer .datatable-pager .datatable-icon-right, .ngx-datatable.material .datatable-footer .datatable-pager .datatable-icon-prev {
+    font-size: 15px;
+    line-height: 26px;
+    
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

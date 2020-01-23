@@ -1,12 +1,52 @@
 <app-header></app-header>
 
 <div style="padding-left: 30px;padding-right: 30px">
-    <div class="btn btn-primary">Add Volunteer</div>
-    <ngx-datatable class="material fullscreen" [rows]="volunteerList" style="top: 20px" [columnMode]="'force'"
-        headerHeight="50" footerHeight="50" rowHeight="auto" [limit]="10" [scrollbarH]="true">
+    <div class="pull-right" style="font-size: 15px"><a (click)="openModal(new)">Add Volunteer</a></div>
+    <ngx-datatable class="material fullscreen" [rows]="volunteerList" style="top: 20px;width: 100%"
+        [columnMode]="'force'" headerHeight="50" footerHeight="50" rowHeight="auto" [limit]="10" [scrollbarH]="true">
 
         <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
         <ngx-datatable-column name="Contact" prop="contact"></ngx-datatable-column>
-        
+
     </ngx-datatable>
 </div>
+<ng-template #new>
+    <div class="modal-header">
+        <button type="button" class="close pull-right" (click)="modalRef.hide()">
+            <span>&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="panel panel-default">
+            <div class="panel-heading common-header">
+                New Volunteer
+            </div>
+            <div class="panel-body">
+                <form [formGroup]="volunteerForm" (ngSubmit)="saveVolunteer()">
+                    <div class="formGroup">
+                        <div class="col-md-12 common-gap">
+                            <div class="col-md-4 custom-right">
+                                <label class="common-label" for="name">Name</label>
+                            </div>
+                            <div class="col-md-4 custom-input">
+                                <input type="text" class="form-control" formControlName="name">
+                            </div>
+                        </div>
+                        <div class="col-md-12 common-gap">
+                            <div class="col-md-4 custom-right">
+                                <label class="common-label" for="name">Contact</label>
+                            </div>
+                            <div class="col-md-4 custom-input">
+                                <input type="text" class="form-control" formControlName="contact">
+                            </div>
+                        </div>
+                        <div style="text-align: center; padding-bottom: 10px;">
+                            <button type="submit" class="btn btn-primary">Save</button>&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-default">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>

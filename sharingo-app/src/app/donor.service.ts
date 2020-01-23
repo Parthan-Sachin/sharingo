@@ -21,6 +21,11 @@ export class DonorService {
     return this.http.post("http://localhost:8080/app/api/donor/newdonorform",foodDetails);
   }
 
+  saveVolunteer(volunteer: any):Observable<any>{
+    console.log("http://localhost:8080/app/api/volunteer",volunteer);
+    return this.http.post("http://localhost:8080/app/api/volunteer",volunteer);
+  }
+
   getDonorByID(id: number):Observable<any>{
     console.log("http://localhost:8080/app/api/donor/" + id);
     return this.http.get("http://localhost:8080/app/api/donor/" + id);

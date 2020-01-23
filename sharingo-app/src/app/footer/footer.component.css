@@ -4,6 +4,7 @@
     bottom: 0;
     width: 100%;
     background-color: #fffbbe;
+    z-index: 10000;
     color: black;
     height: 5%;
     font-size: small;
