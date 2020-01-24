@@ -40,4 +40,10 @@ export class DonorService {
     console.log("http://localhost:8080/app/api/volunteer");
     return this.http.get("http://localhost:8080/app/api/volunteer");
   }
+
+  saveFoodcollectionDetails(collection: any):Observable<any>{
+    console.log("http://localhost:8080/app/api/collection");
+    return this.http.post("http://localhost:8080/app/api/collection",collection);
+  }
+
 }

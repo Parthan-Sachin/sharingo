@@ -18,9 +18,12 @@
                 <ngx-datatable-column name="Complete Order" prop="ID">
                     <ng-template ngx-datatable-cell-template let-row="row">
 
-                        <a class="btn btn-primary" (click)="openModal(complete,'complete')" area-label="complete">
-                            <i class="fa fa-check-square"></i>
+                        <a *ngIf="row.completed == 0;else completed" class="btn btn-default" (click)="openModal(complete,'complete')" area-label="complete">
+                            Complete Now
                         </a>
+                    <ng-template #completed>
+                        <a style="text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Completed</a>
+                    </ng-template>
                         <ng-template #complete>
                             <div class="modal-header">
                                 <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
@@ -28,7 +31,7 @@
                                   </button>
                             </div>
                             <div class="modal-body">        
-                                <app-collection-distribution-edit [operator]="row.operatorName" [OrderID]="row.id" ></app-collection-distribution-edit>
+                                <app-collection-distribution-edit [operator]="row.operatorName" [OrderID]="row.id" (refreshParent)=refresh() ></app-collection-distribution-edit>
                             </div>
                         </ng-template> 
 
