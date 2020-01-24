@@ -79,11 +79,12 @@
 
                     <div class="col-md-12 common-gap">
                         <div class="col-md-4">
-                            <label class="common-label" for="operator">Name of the Operator</label>
+                            <label class="common-label" for="operatorID">Name of the Operator</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="operator"
-                                placeholder="Enter operator Name">
+                            <ng-select class="common-select" [items]="volunteerList" formControlName="operatorID"
+                                bindLabel="name" bindValue="id">
+                            </ng-select>                            
                         </div>
                     </div><br><br>
 

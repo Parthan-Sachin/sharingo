@@ -12,6 +12,7 @@ export class DonorComponent implements OnInit {
    donorForm =new FormGroup({});
    saveObject:any;
    donor:any;
+   public volunteerList: any;
    public infoFlag: boolean = false;
    public saveText:string="save"
    
@@ -27,10 +28,19 @@ export class DonorComponent implements OnInit {
       foodItems:[''],
       description:[''],
       serviceCharge:[''],
-      operator:['']
+      operatorID:['']
 
     })
-  
+  this.loadVolunteers();
+  }
+
+  loadVolunteers(){
+    this.donorService.getVolunteers().subscribe(
+      result => {
+        this.volunteerList = result;
+        console.log(this.volunteerList);
+      }
+    )
   }
 
   saveDonor()
@@ -49,11 +59,7 @@ export class DonorComponent implements OnInit {
         setTimeout(function(){
           this.infoFlag=false;
           this.saveText= "Save"
-        }.bind(this),1500);
-
-       
-
-        
+        }.bind(this),1500);        
       }
     )   
 

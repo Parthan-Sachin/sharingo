@@ -13,6 +13,8 @@ export class CollectionDistributionEditComponent implements OnInit {
   @Input() OrderID : number = 0;
   @Input() operator : string = "";
   @Output() refreshParent = new EventEmitter();
+  @Input() foodRecordID : number = 0;
+  @Input() operatorID: number = 0;
 
   modelRef : BsModalRef;
   collectionForm =new FormGroup({});
@@ -36,6 +38,7 @@ export class CollectionDistributionEditComponent implements OnInit {
     console.log(this.OrderID);
     console.log(this.operator);
     this.collectionForm = this.fb.group({
+      id:[''],
       donorID:[''],
       name:[''],
       address:[''],
@@ -44,7 +47,8 @@ export class CollectionDistributionEditComponent implements OnInit {
       pickupTime:[''],
       servingTemp:[''],
       deliveredTime:[''],
-      operator:['']
+      operator:[''],
+      operatorID:['']
 
     })
 this.getDonor(this.OrderID,this.operator)
@@ -61,11 +65,13 @@ getDonor(ID:number , operator:string){
      console.log(this.donor);
      
      this.collectionForm.patchValue({
+      id:this.foodRecordID,
       donorID:this.tempID,
       name:this.donor[0].name,
       address:this.donor[0].address,
       date:this.donor[0].dateOfRegis,
-      operator:this.tempOperator
+      operator:this.tempOperator,
+      operatorID:this.operatorID
      }) 
     }
   )

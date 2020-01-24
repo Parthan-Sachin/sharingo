@@ -1,9 +1,8 @@
-
 <div>
     <div style="font-size: 14px;" *ngIf="infoFlag" class="alert alert-success">
         Food collection and distribution record have been saved <strong>Successfully!</strong>
     </div>
-    <div  style="font-size: 14px;" *ngIf="warningFlag" class="alert alert-warning" >
+    <div style="font-size: 14px;" *ngIf="warningFlag" class="alert alert-warning">
         Confirm everything before you click <strong>Save.</strong>
     </div>
 
@@ -17,10 +16,19 @@
 
                     <div class="col-md-12 common-gap" *ngIf="!hideID">
                         <div class="col-md-4">
+                            <label class="common-label" for="id">Food Record ID</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" formControlName="id" readonly>
+                        </div>
+                    </div><br>
+
+                    <div class="col-md-12 common-gap" *ngIf="!hideID">
+                        <div class="col-md-4">
                             <label class="common-label" for="donorID">Donor ID</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="donorID" readonly >
+                            <input type="text" class="form-control" formControlName="donorID" readonly>
                         </div>
                     </div><br>
 
@@ -29,7 +37,7 @@
                             <label class="common-label" for="name">Donor Name</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="name" readonly >
+                            <input type="text" class="form-control" formControlName="name" readonly>
                         </div>
                     </div><br>
 
@@ -38,8 +46,7 @@
                             <label class="common-label" for="address">Location</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" formControlName="address"
-                                readonly>
+                            <input type="text" class="form-control" formControlName="address" readonly>
                         </div>
                     </div><br>
 
@@ -58,7 +65,7 @@
                         </div>
                         <div class="col-md-6">
                             <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" min="0" max="100"
-                                formControlName="storageTemp" >
+                                formControlName="storageTemp">
                             </mat-slider>
                         </div>
                     </div><br>
@@ -68,8 +75,7 @@
                             <label class="common-label" for="pickupTime">Food Pick-up Time</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="time" class="form-control" formControlName="pickupTime"
-                                >
+                            <input type="time" class="form-control" formControlName="pickupTime">
                         </div>
                     </div><br>
 
@@ -79,7 +85,7 @@
                         </div>
                         <div class="col-md-6">
                             <mat-slider thumbLabel [displayWith]="formatLabe2" tickInterval="1" min="0" max="100"
-                                formControlName="servingTemp" >
+                                formControlName="servingTemp">
                             </mat-slider>
                         </div>
                     </div><br>
@@ -89,8 +95,7 @@
                             <label class="common-label" for="deliveredTime">Food Delivered Time</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="time" class="form-control" formControlName="deliveredTime"
-                                >
+                            <input type="time" class="form-control" formControlName="deliveredTime">
                         </div>
                     </div><br>
 
@@ -99,14 +104,14 @@
                             <label class="common-label" for="operator">Operator</label>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" readonly formControlName="operator" readonly
-                                >
+                            <input type="text" class="form-control" readonly formControlName="operator" readonly>
                         </div>
                     </div><br><br>
 
                     <div style="text-align: center; padding-bottom: 10px;">
-                        <button  [disabled]="isDisable" type="submit" class="btn btn-primary">{{saveText}}</button>&nbsp;
-                        <button  [disabled]="isDisable" type="button" (click)="cancel()" class="btn btn-default">Clear</button>
+                        <button [disabled]="isDisable" type="submit" class="btn btn-primary">{{saveText}}</button>&nbsp;
+                        <button [disabled]="isDisable" type="button" (click)="cancel()"
+                            class="btn btn-default">Clear</button>
                     </div>
                 </div>
 

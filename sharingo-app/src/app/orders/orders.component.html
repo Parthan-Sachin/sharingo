@@ -31,7 +31,7 @@
                                   </button>
                             </div>
                             <div class="modal-body">        
-                                <app-collection-distribution-edit [operator]="row.operatorName" [OrderID]="row.id" (refreshParent)=refresh() ></app-collection-distribution-edit>
+                                <app-collection-distribution-edit [operator]="row.operatorName" [operatorID]="row.operatorID" [OrderID]="row.donorId" [foodRecordID]="row.id" (refreshParent)=refresh() ></app-collection-distribution-edit>
                             </div>
                         </ng-template> 
 

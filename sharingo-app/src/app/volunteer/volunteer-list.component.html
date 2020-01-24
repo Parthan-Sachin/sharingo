@@ -17,6 +17,9 @@
         </button>
     </div>
     <div class="modal-body">
+        <div *ngIf="infoFlag" class="alert alert-success common-header">
+            Volunteer added <strong>Successfully!</strong>
+        </div>
         <div class="panel panel-default">
             <div class="panel-heading common-header">
                 New Volunteer
@@ -41,7 +44,7 @@
                             </div>
                         </div>
                         <div style="text-align: center; padding-bottom: 10px;">
-                            <button type="submit" class="btn btn-primary">Save</button>&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">{{saveText}}</button>&nbsp;&nbsp;
                             <button type="reset" class="btn btn-default">Clear</button>
                         </div>
                     </div>

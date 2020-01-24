@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { DonorService } from '../donor.service';
-import  *  as  data  from  '../../assets/volunteer.json';
+import *  as  data from '../../assets/volunteer.json';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
@@ -11,46 +11,64 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 })
 
 
-export class VolunteerListComponent implements OnInit{
+export class VolunteerListComponent implements OnInit {
 
     public volunteerList: any;
     jsonProducts: any = (data as any).default;
     modalRef: BsModalRef;
     public volunteerForm = new FormGroup({});
+    public infoFlag: boolean = false;
+    public saveText: string = "save"
 
-    constructor(private donorService: DonorService, private modalService: BsModalService,private fb: FormBuilder){
+    constructor(private donorService: DonorService, private modalService: BsModalService, private fb: FormBuilder) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
 
-       
+
         this.volunteerForm = this.fb.group({
-            name:[''],
-            contact:['']
-      
-          })
+            name: [''],
+            contact: ['']
 
-        this.donorService.getVolunteers().subscribe(
-            result =>{
-                console.log(result);
-                this.volunteerList = result;
-            }
-        )
+        })
+        this.loadVolunteerList();
+
 
         //comment this line if not deploying
         //this.volunteerList = this.jsonProducts;
     }
 
-    openModal(template: TemplateRef<any>){
-        this.modalRef = this.modalService.show(template, {class: 'modal-lg'});
+    loadVolunteerList() {
+        this.donorService.getVolunteers().subscribe(
+            result => {
+                console.log(result);
+                this.volunteerList = result;
+            }
+        )
     }
 
-    saveVolunteer(){
-        let volunteer = {"name":this.volunteerForm.get('name').value,"contact":this.volunteerForm.get('contact').value};
+    openModal(template: TemplateRef<any>) {
+        this.modalRef = this.modalService.show(template, { class: 'modal-lg' });
+    }
+
+    saveVolunteer() {
+        let volunteer = { "name": this.volunteerForm.get('name').value, "contact": this.volunteerForm.get('contact').value };
         console.log(volunteer);
         this.donorService.saveVolunteer(volunteer).subscribe(
-            result => console.log(result)
+            result => {
+                console.log(result);
+                this.infoFlag = true;
+                this.saveText = "Saved";
+                setTimeout(function () {
+                    this.infoFlag = false;
+                    this.saveText = "Save"
+                }.bind(this), 2500);
+                this.modalRef.hide();
+                this.volunteerForm.reset();
+                this.loadVolunteerList();
+
+            }
         )
     }
 
