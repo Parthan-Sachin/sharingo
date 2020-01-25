@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild, EventEmitter, Output } from '@angu
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DonorService } from '../donor.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { collectionModel } from '../Models/collectionModel.model';
 
 @Component({
   selector: 'app-collection-distribution-edit',
@@ -19,7 +20,7 @@ export class CollectionDistributionEditComponent implements OnInit {
   modelRef : BsModalRef;
   collectionForm =new FormGroup({});
   saveObject:any;
-  collectionDistribution:any;
+  public collectionDistribution:collectionModel;
   public infoFlag: boolean = false;
   public warningFlag: boolean = true;
   public completed: boolean = false;
@@ -91,8 +92,10 @@ getDonor(ID:number , operator:string){
     this.saveText= "Saving..."
     this.saveObject=Object.assign({},this.collectionDistribution,this.collectionForm.value)
 
-    console.log(this.saveObject);
-    this.donorService.saveFoodcollectionDetails(this.saveObject).subscribe(
+    this.collectionDistribution=this.saveObject;
+
+    console.log(this.collectionDistribution);
+    this.donorService.saveFoodcollectionDetails(this.collectionDistribution).subscribe(
       result => {
         console.log(result);
         this.infoFlag = true;

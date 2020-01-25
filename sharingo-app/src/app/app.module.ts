@@ -28,6 +28,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { SensoryEvaluationComponent } from './sensory-evaluation/sensory-evaluation-edit.component';
 import { VolunteerListComponent } from './volunteer/volunteer-list.component';
 import { CollectionDistributionEditComponent } from './collection-distribution-edit/collection-distribution-edit.component';
+import { OrderViewComponent } from './orders/order-view/order-view.component';
 
 
 
@@ -46,8 +47,8 @@ import { CollectionDistributionEditComponent } from './collection-distribution-e
     OrdersComponent,
     SensoryEvaluationComponent,
     VolunteerListComponent,
-    CollectionDistributionEditComponent
-    
+    CollectionDistributionEditComponent,
+    OrderViewComponent
 
   ],
   imports: [
