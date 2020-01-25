@@ -20,6 +20,7 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DonorService } from './donor.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SignaturePadModule } from '@ng-plus/signature-pad';
 import { FooterComponent } from './footer/footer.component';
 import { FoodRecordsComponent } from './foodRecords/foodRecords.component';
 import { LoginComponent } from './LoginPage/login.component';
@@ -55,6 +56,7 @@ import { CollectionDistributionEditComponent } from './collection-distribution-e
     ModalModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    SignaturePadModule,
     MatSliderModule,
     NgxDatatableModule,
     RouterModule.forRoot([
