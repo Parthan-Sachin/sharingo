@@ -29,6 +29,7 @@ import { SensoryEvaluationComponent } from './sensory-evaluation/sensory-evaluat
 import { VolunteerListComponent } from './volunteer/volunteer-list.component';
 import { CollectionDistributionEditComponent } from './collection-distribution-edit/collection-distribution-edit.component';
 import { OrderViewComponent } from './orders/order-view/order-view.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 
@@ -48,7 +49,8 @@ import { OrderViewComponent } from './orders/order-view/order-view.component';
     SensoryEvaluationComponent,
     VolunteerListComponent,
     CollectionDistributionEditComponent,
-    OrderViewComponent
+    OrderViewComponent,
+    FeedbackComponent
 
   ],
   imports: [
@@ -61,6 +63,7 @@ import { OrderViewComponent } from './orders/order-view/order-view.component';
     MatSliderModule,
     NgxDatatableModule,
     RouterModule.forRoot([
+      {path:'feedback',component:FeedbackComponent},
       {path:'volunteer',component:VolunteerListComponent},
       {path:'sensory',component:SensoryEvaluationComponent},
       {path:'dashboard',component:AppComponent},

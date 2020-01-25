@@ -36,14 +36,14 @@ export class VolunteerListComponent implements OnInit {
 
 
         //comment this line if not deploying
-        //this.volunteerList = this.jsonProducts;
+        this.volunteerList = this.jsonProducts;
     }
 
     loadVolunteerList() {
         this.donorService.getVolunteers().subscribe(
             result => {
                 console.log(result);
-                this.volunteerList = result;
+                //this.volunteerList = result;
             }
         )
     }
@@ -62,9 +62,10 @@ export class VolunteerListComponent implements OnInit {
                 this.saveText = "Saved";
                 setTimeout(function () {
                     this.infoFlag = false;
-                    this.saveText = "Save"
+                    this.saveText = "Save";
+                    this.modalRef.hide();
                 }.bind(this), 2500);
-                this.modalRef.hide();
+                
                 this.volunteerForm.reset();
                 this.loadVolunteerList();
 

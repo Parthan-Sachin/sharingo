@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="col-md-12 common-gap">
+    <div class="col-md-4">
+        <label class="common-label" for="signature">Signature</label>
+    </div>
+    <div class="col-md-6">
+        <ng-signature-pad format="base64" [emitOnDragEnd]="true" (done)="showImage($event)" [showDoneButton]="false">
+        </ng-signature-pad>
+    </div>
+
+</div>
