@@ -14,7 +14,7 @@ export class OrderViewComponent implements OnInit {
   @Input() foodRecordID : number = 0;
   @Input() operatorID: number = 0;
 
-  public orderDetails : any;
+  public modelCollectionDistribution : any;
 
   constructor(private donorService: DonorService) { }
 
@@ -28,8 +28,8 @@ export class OrderViewComponent implements OnInit {
     this.donorService.getCollectionByDonaorID(ID).subscribe(
       result => {
         console.log(result);
-        this.orderDetails = result;
-       console.log(this.orderDetails);
+        this.modelCollectionDistribution = result;
+       console.log(this.modelCollectionDistribution);
        
      
       }

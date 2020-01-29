@@ -11,6 +11,22 @@
 body {
     font-size: 0.9rem;
   }
+
+.info_heading{
+  font-size: 16px;
+  font-weight: normal;
+  font-family: inherit;
+}
+
+.info_text{
+  font-size: 12px;
+  font-weight: bold;
+}
+.info_text2{
+  font-size: 12px;
+}
+
+
   .page-wrapper.toggled .sidebar {
     left: -300px;
   }
