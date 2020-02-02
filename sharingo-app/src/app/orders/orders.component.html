@@ -5,60 +5,100 @@
         <div class="panel-heading common-header">Orders</div>
         <div class="panel-body">
 
-        <div style="padding-left: 30px;padding-right: 30px; padding-bottom: 23px;">
+            <div style="padding-left: 30px;padding-right: 30px; padding-bottom: 23px;">
                 <ngx-datatable class="material fullscreen" [rows]="foodRecords" style="top: 20px" [columnMode]="'force'"
-                headerHeight="50" footerHeight="40" rowHeight="auto" (select)="onSelect($event)"
-                [limit]="10" [scrollbarH]="true">
-                
-                <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
-                <ngx-datatable-column name="Food Count" prop="foodCount"></ngx-datatable-column>
-                <ngx-datatable-column name="Food Items" prop="foodItems"></ngx-datatable-column>
-                <ngx-datatable-column name="Service Charge" prop="serviceCharge"></ngx-datatable-column>
-                <ngx-datatable-column name="Operator Name" prop="operatorName"></ngx-datatable-column>
-                <ngx-datatable-column name="Complete Order" prop="ID">
-                    <ng-template ngx-datatable-cell-template let-row="row">
+                    headerHeight="50" footerHeight="40" rowHeight="auto" [limit]="10" [scrollbarH]="true">
+                    <ngx-datatable-column name="#" width="10">
+                        <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                            <p>{{rowIndex + 1}}</p>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Donor Name" prop="name"></ngx-datatable-column>
+                    <ngx-datatable-column name="Food Count" prop="foodCount"></ngx-datatable-column>
+                    <ngx-datatable-column name="Food Items" prop="foodItems"></ngx-datatable-column>
+                    <ngx-datatable-column name="Service Charge" prop="serviceCharge"></ngx-datatable-column>
+                    <ngx-datatable-column name="Operator Name" prop="operatorName"></ngx-datatable-column>
+                    <ngx-datatable-column name="Complete Order">
+                        <ng-template ngx-datatable-cell-template let-row="row">
 
-                        <a *ngIf="row.completed == 0;else completed" class="btn btn-default" (click)="openModal(complete,'complete')" area-label="complete">
-                            Complete Now
-                        </a>
-                    <ng-template #completed>
-                       &nbsp; <a class="btn btn-success" (click)="openModal(view,'view')" area-label="view">
-                            View Details
-                        </a>
-                    </ng-template>
-                        <ng-template #complete>
-                            <div class="modal-header">
-                                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                            </div>
-                            <div class="modal-body">        
-                                <app-collection-distribution-edit [operator]="row.operatorName" [operatorID]="row.operatorID" [OrderID]="row.donorId" [foodRecordID]="row.id" (refreshParent)=refresh() ></app-collection-distribution-edit>
-                            </div>
-                        </ng-template> 
+                            <a *ngIf="row.sensCompleted == 0; else completeStep2" class="btn btn-primary"
+                                (click)="openModal(complete1)">
+                                Step 1
+                            </a>
+                            <ng-template #completeStep2>
+                                <a *ngIf="row.completed == 0;else completed" class="btn btn-default"
+                                    (click)="openModal(complete)">
+                                    Step 2
+                                </a>
+                            </ng-template>
 
-                        <ng-template #view>
-                            <div class="modal-header">
-                                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                            </div>
-                            <div class="modal-body">        
-                                <app-order-view [operator]="row.operatorName" [operatorID]="row.operatorID" [DonorID]="row.donorId" [foodRecordID]="row.id" ></app-order-view>
-                            </div>
-                        </ng-template> 
+                            <ng-template #completed>
+                                &nbsp; <a class="btn btn-success" (click)="openModal(view)" area-label="view">
+                                    View Details
+                                </a>
+                            </ng-template>
 
-                    </ng-template>
+                            <ng-template #complete1>
+                                <div class="modal-header">
+                                    <button type="button" class="close pull-right" aria-label="Close"
+                                        (click)="modalRef.hide()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <app-sensory-edit [foodRecordID]="row.foodCallrecordID"></app-sensory-edit>
+                                </div>
+                            </ng-template>
 
-                </ngx-datatable-column>
+                            <ng-template #complete>
+                                <div class="modal-header">
+                                    <button type="button" class="close pull-right" aria-label="Close"
+                                        (click)="modalRef.hide()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <app-collection-distribution-edit [operator]="row.operatorName"
+                                        [operatorID]="row.operatorID" [OrderID]="row.donorId"
+                                        [foodRecordID]="row.foodCallrecordID" (refreshParent)=refresh()>
+                                    </app-collection-distribution-edit>
+                                </div>
+                            </ng-template>
 
-                
+                            <ng-template #view>
+                                <div class="modal-header">
+                                    <button type="button" class="close pull-right" aria-label="Close"
+                                        (click)="modalRef.hide()">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <app-order-view [operator]="row.operatorName" [operatorID]="row.operatorID"
+                                        [DonorID]="row.donorId" [foodRecordID]="row.foodCallrecordID"></app-order-view>
+                                </div>
+                            </ng-template>
+                        </ng-template>
 
-            </ngx-datatable>
+                    </ngx-datatable-column>
+
+
+
+                </ngx-datatable>
+            </div>
         </div>
+    </div>
+
+    <ng-template #view>
+        <div class="modal-header">
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-       </div> 
-        
-    
+        <div class="modal-body">
+            <app-order-view [operator]="row.operatorName" [operatorID]="row.operatorID" [DonorID]="row.donorId"
+                [foodRecordID]="row.foodCallrecordID"></app-order-view>
+        </div>
+    </ng-template>
+
 
 </div>

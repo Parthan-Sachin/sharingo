@@ -1,144 +1,139 @@
 <div class="panel panel-default">
-    <div class="panel-heading">
-  
-      <div style="overflow:hidden">
-        <div class="common-header">
-          Food Collection and Distribution Details
-          
-        </div>
+  <div class="panel-heading">
+
+    <div style="overflow:hidden">
+      <div class="common-header">
+        Food Collection and Distribution Details
+
       </div>
     </div>
-  
-    <div class="panel-body" >
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <span class="pull-right">
-            </span>
-          </div>
-        </div>
-        <div>&nbsp;</div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                
-                <div class="info_heading">
-                  <span><b>Donor Details</b> </span>
-                </div><hr>
-                <div class="col-md-12">
-                  
-                    
-                      <div class="col-md-12">
-                        <div class="col-md-6 info_text">Name : </div>
-                        <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].donorName }}</div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="col-md-6  info_text">Address : </div>
-                        <div class="col-md-6 info_text2">{{   modelCollectionDistribution[0].donorAddress}} </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="col-md-6 info_text">Contact Number :</div>
-                        <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].donorContact }} </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="col-md-6 info_text">Donate Date :</div>
-                        <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].donatedDate }} </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="col-md-6  info_text">Service Charge :</div>
-                        <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].serviceCharge }} </div>
-                      </div>
-                    
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-  
-        <div class="row">
-          <div class="col-md-12">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                
-                <div class="info_heading">
-                  <span><b>Food Record Details</b> </span>
-                </div><hr>
-                <div class="col-md-12">
-            
-                    
-                      <div class="col-md-12">
-                        <div class="col-md-6  info_text">Food Items :</div>
-                        <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].foodItems }} </div>
-                      </div>
-  
-                      <div class="col-md-12">
-                        <div class="col-md-6 info_text">Number of food items per plate count :</div>
-                        <div class="col-md-6 info_text2">{{  modelCollectionDistribution[0].foodCount }} </div>
-                    
-                      </div>
-  
-                      <div class="col-md-12">
-                        <div class="col-md-6 info_text">Organisation Name : </div>
-                        <div class="col-md-6 info_text2">
-                          {{ modelCollectionDistribution[0].foodItems }}
-                        </div>
-                      </div>
-                   
-                  
-                </div>
-              </div>
-            </div>
-  
-  
-  
-            <div class="row">
-              <div class="col-md-12">
-                <div class="panel panel-default">
-                  <div class="panel-body">
-                    
-                    <div class="info_heading">
-                      <span><b>Collection And Distribution Details</b> </span>
-                    </div><hr>
-                    <div class="col-md-12">
-                      
-                            <div class="col-md-12">
-                              <div class="col-md-6 info_text">Pickup Time : </div>
-                              <div class="col-md-6 info_text2">
-                                {{modelCollectionDistribution[0].pickUpTime }}</div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="col-md-6 info_text">Storage Temperature : </div>
-                              <div class="col-md-6 info_text2">
-                                {{modelCollectionDistribution[0].storageTemp }} </div>
-                            </div>
-                          
-                          
-                            <div class="col-md-12">
-                              <div class="col-md-6 info_text">Serving Temperature : </div>
-                              <div class="col-md-6 info_text2">
-                                {{modelCollectionDistribution[0].servingTemp }} </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="col-md-6 info_text">Delivered Time :</div>
-                              <div class="col-md-6 info_text2">
-                                {{ modelCollectionDistribution[0].deliveredTime}}
-                              </div>
-                            </div>
+  </div>
 
-                            <div class="col-md-12">
-                                <div class="col-md-6 info_text">Operator Name (Volenteer) :</div>
-                                <div class="col-md-6 info_text2">
-                                  {{ modelCollectionDistribution[0].operatorName }}
-                                </div>
-                              </div>
-                          
-                        </div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <span class="pull-right">
+          </span>
+        </div>
+      </div>
+      <div>&nbsp;</div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <div class="info_heading">
+                <span><b>Donor Details</b> </span>
+              </div>
+              <hr>
+              <div class="col-md-12">
+
+
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Name : </div>
+                  <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].donorName }}</div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6  info_text">Address : </div>
+                  <div class="col-md-6 info_text2">{{   modelCollectionDistribution[0].donorAddress}} </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Contact Number :</div>
+                  <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].donorContact }} </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Donate Date :</div>
+                  <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].donatedDate }} </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6  info_text">Service Charge :</div>
+                  <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].serviceCharge }} </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <div class="info_heading">
+                <span><b>Food Record Details</b> </span>
+              </div>
+              <hr>
+              <div class="col-md-12">
+
+
+                <div class="col-md-12">
+                  <div class="col-md-6  info_text">Food Items :</div>
+                  <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].foodItems }} </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Quantity of Food (per plate count) :</div>
+                  <div class="col-md-6 info_text2">{{  modelCollectionDistribution[0].foodCount }} </div>
+
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default">
+                <div class="panel-body">
+
+                  <div class="info_heading">
+                    <span><b>Collection And Distribution Details</b> </span>
+                  </div>
+                  <hr>
+                  <div class="col-md-12">
+
+                    <div class="col-md-12">
+                      <div class="col-md-6 info_text">Pickup Time : </div>
+                      <div class="col-md-6 info_text2">
+                        {{modelCollectionDistribution[0].pickUpTime }}</div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="col-md-6 info_text">Storage Temperature : </div>
+                      <div class="col-md-6 info_text2">
+                        {{modelCollectionDistribution[0].storageTemp }} </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                      <div class="col-md-6 info_text">Serving Temperature : </div>
+                      <div class="col-md-6 info_text2">
+                        {{modelCollectionDistribution[0].servingTemp }} </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="col-md-6 info_text">Delivered Time :</div>
+                      <div class="col-md-6 info_text2">
+                        {{ modelCollectionDistribution[0].deliveredTime}}
                       </div>
                     </div>
+
+                    <div class="col-md-12">
+                      <div class="col-md-6 info_text">Operator Name (Volunteer) :</div>
+                      <div class="col-md-6 info_text2">
+                        {{ modelCollectionDistribution[0].operatorName }}
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-  
-  
+              </div>
+            </div>
+          </div>

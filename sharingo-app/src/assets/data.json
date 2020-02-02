@@ -5,7 +5,8 @@
         "id": 25,
         "name": "shareef",
         "operatorName": "firoz",
-        "serviceCharge": "5%"
+        "serviceCharge": "5%",
+        "sensCompleted": 0
     },
     {
         "foodCount": 1,
@@ -13,7 +14,8 @@
         "id": 24,
         "name": "tendulkar",
         "operatorName": "sachin",
-        "serviceCharge": "5"
+        "serviceCharge": "5",
+        "sensCompleted": 0
     },
     {
         "foodCount": 2,
@@ -21,7 +23,8 @@
         "id": 23,
         "name": "sachin donorr",
         "operatorName": "sachin",
-        "serviceCharge": "8"
+        "serviceCharge": "8",
+        "sensCompleted": 0
     },
     {
         "foodCount": 5,
@@ -29,7 +32,8 @@
         "id": 22,
         "name": "another donor",
         "operatorName": "sachin",
-        "serviceCharge": "8"
+        "serviceCharge": "8",
+        "sensCompleted": 0
     },
     {
         "foodCount": 4,
@@ -37,7 +41,8 @@
         "id": 21,
         "name": "test2",
         "operatorName": "asdaf",
-        "serviceCharge": "8"
+        "serviceCharge": "8",
+        "sensCompleted": 0
     },
     {
         "foodCount": 4,
@@ -45,7 +50,8 @@
         "id": 20,
         "name": "test",
         "operatorName": "asdaf",
-        "serviceCharge": "8"
+        "serviceCharge": "8",
+        "sensCompleted": 0
     },
     {
         "foodCount": 6,
@@ -53,7 +59,8 @@
         "id": 19,
         "name": "firoz",
         "operatorName": "parthan",
-        "serviceCharge": "7%"
+        "serviceCharge": "7%",
+        "sensCompleted": 0
     },
     {
         "foodCount": 5,
@@ -61,7 +68,8 @@
         "id": 18,
         "name": "laletta",
         "operatorName": "parthan",
-        "serviceCharge": "5"
+        "serviceCharge": "5",
+        "sensCompleted": 0
     },
     {
         "foodCount": 5,
@@ -69,7 +77,8 @@
         "id": 17,
         "name": "sachin",
         "operatorName": "parthan",
-        "serviceCharge": "8"
+        "serviceCharge": "8",
+        "sensCompleted": 0
     },
     {
         "foodCount": 9,
@@ -77,7 +86,8 @@
         "id": 16,
         "name": "Real donor",
         "operatorName": "parthan",
-        "serviceCharge": "5%"
+        "serviceCharge": "5%",
+        "sensCompleted": 0
     },
     {
         "foodCount": 5,
@@ -85,7 +95,8 @@
         "id": 15,
         "name": "test donor",
         "operatorName": "parthan",
-        "serviceCharge": "5"
+        "serviceCharge": "5",
+        "sensCompleted": 0
     },
     {
         "foodCount": 9,
@@ -93,7 +104,8 @@
         "id": 2,
         "name": "Sachin",
         "operatorName": "sachin",
-        "serviceCharge": "5"
+        "serviceCharge": "5",
+        "sensCompleted": 0
     },
     {
         "foodCount": 5,
@@ -101,6 +113,7 @@
         "id": 1,
         "name": "Parthan",
         "operatorName": "parthan",
-        "serviceCharge": "4.5"
+        "serviceCharge": "4.5",
+        "sensCompleted": 0
     }
 ]

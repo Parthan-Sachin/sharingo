@@ -1,10 +1,14 @@
 <app-header></app-header>
-<div style="padding-bottom: 30px"> 
+<div style="padding-bottom: 30px">
     <div style="padding-left: 30px;padding-right: 30px;padding-bottom: 23px ">
         <ngx-datatable class="material fullscreen" [rows]="foodRecords" style="top: 10px" [columnMode]="'force'"
             headerHeight="50" footerHeight="40" rowHeight="auto" [limit]="10" [scrollbarH]="true">
-
-            <ngx-datatable-column name="Name" prop="name"></ngx-datatable-column>
+            <ngx-datatable-column name="#" width="80">
+                <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                    <p>{{rowIndex + 1}}</p>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Donor Name" prop="name"></ngx-datatable-column>
             <ngx-datatable-column name="Food Count" prop="foodCount"></ngx-datatable-column>
             <ngx-datatable-column name="Food Items" prop="foodItems"></ngx-datatable-column>
             <ngx-datatable-column name="Service Charge" prop="serviceCharge"></ngx-datatable-column>

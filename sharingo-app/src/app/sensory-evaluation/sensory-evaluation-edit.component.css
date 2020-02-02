@@ -1,3 +1,10 @@
 mat-slider {
     width: 100%
 }
+
+@media screen and (max-width: 990px) {
+    .check-button {
+        padding-left: 0px;
+        margin-top: 8px;
+    }
+}
