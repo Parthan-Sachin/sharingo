@@ -46,7 +46,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <app-sensory-edit [foodRecordID]="row.foodCallrecordID"></app-sensory-edit>
+                                    <app-sensory-edit [foodRecordID]="row.foodCallRecordId" (refreshParent)=refresh()></app-sensory-edit>
                                 </div>
                             </ng-template>
 
@@ -60,7 +60,7 @@
                                 <div class="modal-body">
                                     <app-collection-distribution-edit [operator]="row.operatorName"
                                         [operatorID]="row.operatorID" [OrderID]="row.donorId"
-                                        [foodRecordID]="row.foodCallrecordID" (refreshParent)=refresh()>
+                                        [foodRecordID]="row.foodCallRecordId" (refreshParent)=refresh()>
                                     </app-collection-distribution-edit>
                                 </div>
                             </ng-template>

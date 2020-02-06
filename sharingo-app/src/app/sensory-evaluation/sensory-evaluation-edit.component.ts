@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DonorService } from '../donor.service';
 
 @Component({
   selector: 'app-sensory-edit',
@@ -11,16 +12,18 @@ export class SensoryEvaluationComponent implements OnInit {
 
   sensoryForm = new FormGroup({});
   @Input() foodRecordID: number;
+  @Output() refreshParent = new EventEmitter();
   public range: number = 1;
   public fitValue: any;
   public fit: any;
   public sensoryArr: any = [];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private donorService: DonorService) {
 
   }
 
   ngOnInit() {
+    console.log(this.foodRecordID);
     this.sensoryForm = this.fb.group({
       recipeName: [''],
       appearance: 0,
@@ -69,13 +72,13 @@ export class SensoryEvaluationComponent implements OnInit {
   }
 
   addMore(){
-    let sensoryTemp = {'foodRecordID':this.foodRecordID,
+    let sensoryTemp = {'foodCallRecordId':this.foodRecordID,
                         'recipeName':this.sensoryForm.get('recipeName').value,
                         'appearance': this.sensoryForm.get('appearance').value,
                         'aroma': this.sensoryForm.get('aroma').value,
                         'taste': this.sensoryForm.get('taste').value,
-                        'temperatur': this.sensoryForm.get('temperature').value,
-                        'consumption': this.sensoryForm.get('consumption').value,
+                        'temperature': this.sensoryForm.get('temperature').value,
+                        'fitStatus': this.sensoryForm.get('consumption').value,
                         'acceptability': this.sensoryForm.get('acceptability').value                      
                       };
 
@@ -87,6 +90,14 @@ export class SensoryEvaluationComponent implements OnInit {
 
   save() {
     console.log(this.sensoryForm.value);
+    this.donorService.saveSensory(this.sensoryArr).subscribe(
+      result => {
+        console.log(result);
+        this.refreshParent.emit(true);
+      }
+    )
+
+
   }
 
 

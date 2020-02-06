@@ -36,10 +36,10 @@ export class CollectionDistributionEditComponent implements OnInit {
 
   ngOnInit() {
     
-    console.log(this.OrderID);
+    console.log(this.foodRecordID);
     console.log(this.operator);
     this.collectionForm = this.fb.group({
-      id:[''],
+      foodCallRecordId:this.foodRecordID,
       donorID:[''],
       name:[''],
       address:[''],
@@ -66,7 +66,7 @@ getDonor(ID:number , operator:string){
      console.log(this.donor);
      
      this.collectionForm.patchValue({
-      id:this.foodRecordID,
+      foodCallRecordId:this.foodRecordID,
       donorID:this.tempID,
       name:this.donor[0].name,
       address:this.donor[0].address,

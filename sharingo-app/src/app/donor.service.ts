@@ -22,6 +22,11 @@ export class DonorService {
     return this.http.post("http://localhost:8080/app/api/donor/newdonorform", foodDetails);
   }
 
+  saveSensory(sensory: any[]): Observable<any> {
+    console.log("http://localhost:8080/app/api/sensory",sensory);
+    return this.http.post("http://localhost:8080/app/api/sensory",sensory);
+  }
+
   saveVolunteer(volunteer: any): Observable<any> {
     console.log("http://localhost:8080/app/api/volunteer", volunteer);
     return this.http.post("http://localhost:8080/app/api/volunteer", volunteer);

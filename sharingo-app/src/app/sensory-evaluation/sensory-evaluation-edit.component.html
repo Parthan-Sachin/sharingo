@@ -6,19 +6,25 @@
         <div class="panel-heading common-header">Sensory Evaluation Form</div>
         <div class="panel-body">
 
-         <!-- <div>
-             <table>
-                 <tr>
-                     <th>No.</th>
-                     <th>Name</th>
-                 </tr>
-                 <tr *ngFor="let obj of sensoryArr">
-                     <td>1</td>
-                     <td>{{obj.recipeName}}</td>
+            <div *ngIf="sensoryArr.length > 0">
+                <table class="table table-striped text-center" style="font-size: medium">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">No.</th>
+                            <th scope="col" class="text-center">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let obj of sensoryArr;let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{obj.recipeName}}</td>
 
-                 </tr>
-             </table>
-         </div> -->
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
 
             <form [formGroup]="sensoryForm">
 
