@@ -21,7 +21,7 @@
                     <ngx-datatable-column name="Complete Order">
                         <ng-template ngx-datatable-cell-template let-row="row">
 
-                            <a *ngIf="row.sensCompleted == 0; else completeStep2" class="btn btn-primary"
+                            <a *ngIf="row.sensCompleted == 0; else completeStep2" class="btn btn-primary" style="margin-left: 8px"
                                 (click)="openModal(complete1)">
                                 Step 1
                             </a>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <app-order-view [operator]="row.operatorName" [operatorID]="row.operatorID"
-                                        [DonorID]="row.donorId" [foodRecordID]="row.foodCallrecordID"></app-order-view>
+                                        [DonorID]="row.donorId" [foodRecordID]="row.foodCallRecordId"></app-order-view>
                                 </div>
                             </ng-template>
                         </ng-template>

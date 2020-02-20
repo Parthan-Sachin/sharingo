@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem('loginValue');
         localStorage.setItem('loginValue','true');
         console.log("here at login")
-        this.router.navigate(['foodrecords']);
+        this.router.navigate(['dashboard']);
     }
 
     

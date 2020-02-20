@@ -66,7 +66,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
       {path:'feedback',component:FeedbackComponent},
       {path:'volunteer',component:VolunteerListComponent},
       {path:'sensory',component:SensoryEvaluationComponent},
-      {path:'dashboard',component:AppComponent},
+      {path:'dashboard',component:DashboardComponent},
       {path:'',component:LoginComponent},
       {path:'donor/newdonorform',component: DonorComponent},
       {path:'foodrecords', component:FoodRecordsComponent},

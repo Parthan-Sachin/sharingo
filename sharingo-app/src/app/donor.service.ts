@@ -61,9 +61,15 @@ export class DonorService {
     return this.http.post("http://localhost:8080/app/api/collection", collection);
   }
 
-  getCollectionByDonaorID(id: number): Observable<any> {
+  getCollectionByDonorID(id: number): Observable<any> {
     console.log("http://localhost:8080/app/api/collection/" + id);
     return this.http.get("http://localhost:8080/app/api/collection/" + id);
+  }
+
+  getSensoryByFoodRecordID(id: number): Observable<any> {
+    console.log("http://localhost:8080/app/api/sensory/" + id);
+    return this.http.get("http://localhost:8080/app/api/sensory/" + id);
+
   }
 
 }

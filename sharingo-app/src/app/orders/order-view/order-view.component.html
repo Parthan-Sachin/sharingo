@@ -63,77 +63,121 @@
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-body">
-
               <div class="info_heading">
                 <span><b>Food Record Details</b> </span>
               </div>
               <hr>
               <div class="col-md-12">
-
-
                 <div class="col-md-12">
                   <div class="col-md-6  info_text">Food Items :</div>
                   <div class="col-md-6 info_text2">{{ modelCollectionDistribution[0].foodItems }} </div>
                 </div>
-
                 <div class="col-md-12">
                   <div class="col-md-6 info_text">Quantity of Food (per plate count) :</div>
                   <div class="col-md-6 info_text2">{{  modelCollectionDistribution[0].foodCount }} </div>
-
-                </div>
-
-
-
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="panel panel-default">
-                <div class="panel-body">
-
-                  <div class="info_heading">
-                    <span><b>Collection And Distribution Details</b> </span>
-                  </div>
-                  <hr>
-                  <div class="col-md-12">
-
-                    <div class="col-md-12">
-                      <div class="col-md-6 info_text">Pickup Time : </div>
-                      <div class="col-md-6 info_text2">
-                        {{modelCollectionDistribution[0].pickUpTime }}</div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="col-md-6 info_text">Storage Temperature : </div>
-                      <div class="col-md-6 info_text2">
-                        {{modelCollectionDistribution[0].storageTemp }} </div>
-                    </div>
-
-
-                    <div class="col-md-12">
-                      <div class="col-md-6 info_text">Serving Temperature : </div>
-                      <div class="col-md-6 info_text2">
-                        {{modelCollectionDistribution[0].servingTemp }} </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="col-md-6 info_text">Delivered Time :</div>
-                      <div class="col-md-6 info_text2">
-                        {{ modelCollectionDistribution[0].deliveredTime}}
-                      </div>
-                    </div>
-
-                    <div class="col-md-12">
-                      <div class="col-md-6 info_text">Operator Name (Volunteer) :</div>
-                      <div class="col-md-6 info_text2">
-                        {{ modelCollectionDistribution[0].operatorName }}
-                      </div>
-                    </div>
-
-                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="info_heading">
+                <span><b>Sensory Details</b> </span>
+              </div>
+              <hr>
+              <div class="col-md-12">
+                <div style="overflow: auto">
+                  <table class="table table-responsive">
+                    <thead>
+                      <tr>
+                        <th class="info_text">Recipe Name</th>
+                        <th class="info_text">Appearance</th>
+                        <th class="info_text">Aroma</th>
+                        <th class="info_text">Taste</th>
+                        <th class="info_text">Temperature</th>
+                        <th class="info_text">FitStatus</th>
+                        <th class="info_text">Acceptability</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let obj of sensoryList">
+                        <td class="info_text2">{{obj.recipeName}}</td>
+                        <td class="info_text2">{{obj.appearance}}</td>
+                        <td class="info_text2">{{obj.aroma}}</td>
+                        <td class="info_text2">{{obj.taste}}</td>
+                        <td class="info_text2">{{obj.temperature}}</td>
+                        <td class="info_text2">{{obj.fitStatus}}</td>
+                        <td class="info_text2">{{obj.acceptability}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <div class="info_heading">
+                <span><b>Collection And Distribution Details</b> </span>
+              </div>
+              <hr>
+              <div class="col-md-12">
+
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Pickup Time : </div>
+                  <div class="col-md-6 info_text2">
+                    {{modelCollectionDistribution[0].pickUpTime }}</div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Storage Temperature : </div>
+                  <div class="col-md-6 info_text2">
+                    {{modelCollectionDistribution[0].storageTemp }} </div>
+                </div>
+
+
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Serving Temperature : </div>
+                  <div class="col-md-6 info_text2">
+                    {{modelCollectionDistribution[0].servingTemp }} </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Delivered Time :</div>
+                  <div class="col-md-6 info_text2">
+                    {{ modelCollectionDistribution[0].deliveredTime}}
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="col-md-6 info_text">Operator Name (Volunteer) :</div>
+                  <div class="col-md-6 info_text2">
+                    {{ modelCollectionDistribution[0].operatorName }}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
