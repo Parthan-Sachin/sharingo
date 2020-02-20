@@ -63,13 +63,13 @@ import { FeedbackComponent } from './feedback/feedback.component';
     MatSliderModule,
     NgxDatatableModule,
     RouterModule.forRoot([
+      {path:'',component:LoginComponent},
+      {path:'dashboard',component:DashboardComponent, pathMatch:'full'},
       {path:'feedback',component:FeedbackComponent},
       {path:'volunteer',component:VolunteerListComponent},
-      {path:'sensory',component:SensoryEvaluationComponent},
-      {path:'dashboard',component:DashboardComponent},
-      {path:'',component:LoginComponent},
+      {path:'sensory',component:SensoryEvaluationComponent},      
       {path:'donor/newdonorform',component: DonorComponent},
-      {path:'foodrecords', component:FoodRecordsComponent},
+      {path:'foodrecords', component:FoodRecordsComponent, pathMatch:'full'},
       {path:'orders', component:OrdersComponent}
     ]),
     BrowserAnimationsModule,
