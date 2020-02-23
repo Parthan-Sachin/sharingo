@@ -31,7 +31,7 @@ export class FoodRecordsComponent implements OnInit{
        
 
        //console.log(this.products);
-      //this.foodRecords = this.products;
+     // this.foodRecords = this.products;
     }
 
 

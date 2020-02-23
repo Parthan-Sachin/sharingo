@@ -16,7 +16,7 @@
                     <i class="fa fa-phone fa-4x"></i>
                   </div>
                   <div class="col-xs-6 text-right">
-                    <p class="announcement-heading orderCount">230</p>
+                    <p class="announcement-heading orderCount">{{dashboardCount?.foodCallRecords}}</p>
                     <p class="announcement-text cardTitle">Food Calls</p>
                   </div>
                 </div>
@@ -34,10 +34,10 @@
             <div class="panel-heading">
               <div class="row">
                 <div class="col-xs-6">
-                  <i class="fa fa-hand-peace-o fa-4x"></i>
+                  <i class="fa fa-eercast fa-4x"></i>
                 </div>
                 <div class="col-xs-6 text-right">
-                  <p class="announcement-heading orderCount">12</p>
+                  <p class="announcement-heading orderCount">{{dashboardCount?.plates}}</p>
                   <p class="announcement-text cardTitle"> Plates Served</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@
                     <i class="fa fa-comments fa-4x"></i>                    
                   </div>
                   <div class="col-xs-6">
-                    <p class="announcement-heading orderCount text-right">155</p>                                       
+                    <p class="announcement-heading orderCount text-right">{{dashboardCount?.completed}}</p>                                       
                   </div>
                   <div class="col-xs-12">
                       <p class="announcement-text cardTitle text-right"> Orders Completed</p>

@@ -42,6 +42,11 @@ export class DonorService {
     return this.http.get("http://localhost:8080/app/api/donor");
   }
 
+  getDashboardCount(): Observable<any> {
+    console.log("dashboard method called");
+    return this.http.get("http://localhost:8080/app/api/donor/dashboard");
+  }
+
   getSignature(): Observable<any> {
     let headers = new HttpHeaders({
       'Content-Type': 'application/octet-stream'
